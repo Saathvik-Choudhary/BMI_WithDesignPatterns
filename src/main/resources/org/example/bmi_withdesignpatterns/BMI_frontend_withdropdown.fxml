@@ -117,7 +117,7 @@
                   <Font name="Times New Roman" size="16.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="heightUnits" layoutX="200.0" layoutY="61.0" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;" >
+            <ChoiceBox fx:id="heightUnits" layoutX="200.0" layoutY="61.0" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;"  >
                <items>
                   <FXCollections  fx:factory="observableArrayList">
                      <String fx:value="cm" />

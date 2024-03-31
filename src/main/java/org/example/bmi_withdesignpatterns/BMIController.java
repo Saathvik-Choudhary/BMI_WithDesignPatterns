@@ -24,6 +24,21 @@ public class BMIController implements Controller {
     @FXML
     private TextField Output;
 
+
+    public BMIController(){
+        try {
+            this.weightInput.setText("0");
+            this.heightInput.setText("0");
+            this.weightUnits.setValue("kg");
+            this.heightUnits.setValue("cm");
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error is being caused");
+        }
+    }
+
+
     public final void update(float bmi)
     {
         if(bmi==0)

@@ -18,6 +18,7 @@ public class BMIApplication extends Application {
     }
 
     public static void main(String[] args) {
+
         launch();
     }
 }
