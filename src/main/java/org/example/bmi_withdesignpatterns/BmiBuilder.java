@@ -5,8 +5,7 @@ public class BmiBuilder {
     private final float height;
     private final float weight;
 
-    public BmiBuilder(final float height, final float weight, final String heightUnits, final String weightUnits)
-    {
+    public BmiBuilder(final float height, final float weight, final String heightUnits, final String weightUnits) {
         this.height= convertHeightToCm(height,heightUnits);
 
         this.weight=convertWeightToKg(weight,weightUnits);

@@ -25,22 +25,25 @@ public class BMIController implements Controller {
     private TextField Output;
 
 
+    // Tried to set default values using constructor but failed 😭😭😭😭
+    /*
     public BMIController(){
         try {
             this.weightInput.setText("0");
             this.heightInput.setText("0");
             this.weightUnits.setValue("kg");
             this.heightUnits.setValue("cm");
+            this.Output.setText("0");
         }
         catch (Exception e)
         {
             System.out.println("Error is being caused");
         }
     }
+     */
 
 
-    public final void update(float bmi)
-    {
+    public final void update(float bmi) {
         if(bmi==0)
             Output.setText("Invalid Input");
 
@@ -57,8 +60,7 @@ public class BMIController implements Controller {
             float bmi = BmiCalculator.bmiCalculation(bmiObject);
             update(bmi);
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             update(0);
         }
     }
