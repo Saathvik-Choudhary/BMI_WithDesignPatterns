@@ -19,9 +19,9 @@ public class BmiCalculatorTest {
         BmiCalculator ob=new BmiCalculator();
 
         assertEquals(BigDecimal.valueOf(25.68), ob.bmiCalculation(object1));
-        //assertTrue(BigDecimal.valueOf(25.680526733398438).equals( ob.bmiCalculation(object2)));
-        //assertTrue(BigDecimal.valueOf(20.00).equals( ob.bmiCalculation(object3)));
-        //assertTrue(BigDecimal.valueOf(20.00).equals( ob.bmiCalculation(object4)));
+        assertEquals(BigDecimal.valueOf(25.68), ob.bmiCalculation(object2));
+        assertEquals(BigDecimal.valueOf(20.0).setScale(2, RoundingMode.HALF_UP), ob.bmiCalculation(object3));
+        assertEquals(BigDecimal.valueOf(20.0).setScale(2, RoundingMode.HALF_UP), ob.bmiCalculation(object4));
 
     }
 }
