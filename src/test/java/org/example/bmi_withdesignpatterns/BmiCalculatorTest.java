@@ -8,10 +8,10 @@ public class BmiCalculatorTest {
 
     @Test
     public void bmiTest() {
-        BmiBuilder object1 = new BmiBuilder(65,70,"in","kg");
-        BmiBuilder object2 = new BmiBuilder(65,70000,"in","g");
-        BmiBuilder object3 = new BmiBuilder(200,80000,"cm","g");
-        BmiBuilder object4 = new BmiBuilder(200,80,"cm","kg");
+        Person object1 = new Person(65,70,"in","kg");
+        Person object2 = new Person(65,70000,"in","g");
+        Person object3 = new Person(200,80000,"cm","g");
+        Person object4 = new Person(200,80,"cm","kg");
 
         assertEquals(25.680526733398438,BmiCalculator.bmiCalculation(object1));
         assertEquals(25.680526733398438,BmiCalculator.bmiCalculation(object2));

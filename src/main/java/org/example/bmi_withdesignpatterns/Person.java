@@ -3,12 +3,12 @@ package org.example.bmi_withdesignpatterns;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BmiBuilder {
+public class Person {
 
     private final float height;
     private final float weight;
 
-    public BmiBuilder(final float height, final float weight, final String heightUnits, final String weightUnits) {
+    public Person(final float height, final float weight, final String heightUnits, final String weightUnits) {
         this.height= convertHeightToCm(height,heightUnits);
 
         this.weight=convertWeightToKg(weight,weightUnits);
@@ -41,7 +41,6 @@ public class BmiBuilder {
         Map<String,Float> map=new HashMap<>();
         map.put("in",2.54f);
         map.put("cm",1.0f);
-
         /*
         switch (heightUnits)
         {

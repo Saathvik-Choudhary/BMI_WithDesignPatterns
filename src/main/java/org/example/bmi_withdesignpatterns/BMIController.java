@@ -2,10 +2,7 @@ package org.example.bmi_withdesignpatterns;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
-import java.util.Objects;
 
 public class BMIController implements Controller {
 
@@ -25,7 +22,7 @@ public class BMIController implements Controller {
     private TextField Output;
 
 
-    // Tried to set default values using constructor but failed 😭😭😭😭
+    // Tried to set default values using constructor but failed 😭
     /*
     public BMIController(){
         try {
@@ -55,9 +52,9 @@ public class BMIController implements Controller {
     @FXML
     public final void onCalculateButtonClick() {
         try {
-            BmiBuilder bmiObject = new BmiBuilder(Float.parseFloat(getValue(heightInput)), Float.parseFloat(getValue(weightInput)), heightUnits.getValue(), weightUnits.getValue());
-
-            float bmi = BmiCalculator.bmiCalculation(bmiObject);
+            Person bmiObject = new Person(Float.parseFloat(getValue(heightInput)), Float.parseFloat(getValue(weightInput)), heightUnits.getValue(), weightUnits.getValue());
+            BmiCalculator calculatorObject=new BmiCalculator();
+            float bmi = calculatorObject.bmiCalculation(bmiObject);
             update(bmi);
         }
         catch (Exception e) {

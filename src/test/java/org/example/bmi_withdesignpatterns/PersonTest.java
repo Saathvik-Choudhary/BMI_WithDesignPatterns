@@ -6,7 +6,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BmiBuilderTest {
+public class PersonTest {
 
     @Test
     public void heightTestWhenIn()
@@ -14,7 +14,7 @@ public class BmiBuilderTest {
         Random random=new Random();
         int height= random.nextInt();
         for(int i=0;i<100;i++) {
-            BmiBuilder builderObject = new BmiBuilder(height, 10, "in", "kg");
+            Person builderObject = new Person(height, 10, "in", "kg");
             assertEquals(height*2.54f,builderObject.getHeight());
         }
     }
@@ -25,7 +25,7 @@ public class BmiBuilderTest {
         Random random=new Random();
         int height= random.nextInt();
         for(int i=0;i<100;i++) {
-            BmiBuilder builderObject = new BmiBuilder(height, 10, "cm", "kg");
+            Person builderObject = new Person(height, 10, "cm", "kg");
             assertEquals(height,builderObject.getHeight());
         }
     }
@@ -36,7 +36,7 @@ public class BmiBuilderTest {
         Random random=new Random();
         int weight= random.nextInt();
         for(int i=0;i<100;i++) {
-            BmiBuilder builderObject = new BmiBuilder(10, weight , "in", "kg");
+            Person builderObject = new Person(10, weight , "in", "kg");
             assertEquals(weight,builderObject.getWeight());
         }
     }
@@ -46,7 +46,7 @@ public class BmiBuilderTest {
         Random random=new Random();
         int weight= random.nextInt();
         for(int i=0;i<100;i++) {
-            BmiBuilder builderObject = new BmiBuilder(10, weight , "in", "g");
+            Person builderObject = new Person(10, weight , "in", "g");
             assertEquals((float)weight/1000,builderObject.getWeight());
         }
     }
