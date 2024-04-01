@@ -120,8 +120,6 @@
             <ChoiceBox fx:id="heightUnits" layoutX="200.0" layoutY="61.0" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;"  >
                <items>
                   <FXCollections  fx:factory="observableArrayList">
-                     <String fx:value="cm" />
-                     <String fx:value="in" />
                   </FXCollections>
                </items>
             </ChoiceBox>
@@ -143,8 +141,6 @@
             <ChoiceBox fx:id="weightUnits" layoutX="200.0" layoutY="44.0" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-color: black;" >
                <items>
                   <FXCollections  fx:factory="observableArrayList" >
-                     <String fx:value="kg" />
-                     <String fx:value="g" />
                   </FXCollections>
                </items>
             </ChoiceBox>

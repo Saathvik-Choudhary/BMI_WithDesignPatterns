@@ -1,14 +1,15 @@
 package org.example.bmi_withdesignpatterns;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Person {
 
-    private final float height;
-    private final float weight;
+    private final BigDecimal height;
+    private final BigDecimal weight;
 
-    public Person(final float height, final float weight, final String heightUnits, final String weightUnits) {
+    public Person(final BigDecimal height, final BigDecimal weight, final String heightUnits, final String weightUnits) {
         this.height= convertHeightToCm(height,heightUnits);
 
         this.weight=convertWeightToKg(weight,weightUnits);
@@ -16,10 +17,10 @@ public class Person {
 
 
 
-    private final float convertWeightToKg(final float weight,final String weightUnits) {
-        Map<String,Float> map=new HashMap<>();
-        map.put("g",0.001f);
-        map.put("kg",1.0f);
+    private final BigDecimal convertWeightToKg(final BigDecimal weight,final String weightUnits) {
+        Map<String,BigDecimal> map=new HashMap<>();
+        map.put("g",BigDecimal.valueOf(0.001));
+        map.put("kg",BigDecimal.valueOf(1));
         /*
         switch (weightUnits)
         {
@@ -33,14 +34,14 @@ public class Person {
             }
         }
          */
-        return (weight*map.get(weightUnits));
+        return (weight.multiply( map.get(weightUnits)));
     }
 
-    private final float convertHeightToCm(final float height, final String heightUnits) {
+    private final BigDecimal convertHeightToCm(final BigDecimal height, final String heightUnits) {
 
-        Map<String,Float> map=new HashMap<>();
-        map.put("in",2.54f);
-        map.put("cm",1.0f);
+        Map<String,BigDecimal> map=new HashMap<>();
+        map.put("in",BigDecimal.valueOf(2.54));
+        map.put("cm",BigDecimal.valueOf(1));
         /*
         switch (heightUnits)
         {
@@ -55,14 +56,14 @@ public class Person {
         }
          */
 
-        return (height*map.get(heightUnits));
+        return (height.multiply(map.get(heightUnits)));
     }
 
-    public final float getHeight() {
+    public final BigDecimal getHeight() {
         return this.height;
     }
 
-    public final float getWeight() {
+    public final BigDecimal getWeight() {
         return this.weight;
     }
 

@@ -2,6 +2,7 @@ package org.example.bmi_withdesignpatterns;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,8 +15,8 @@ public class PersonTest {
         Random random=new Random();
         int height= random.nextInt();
         for(int i=0;i<100;i++) {
-            Person builderObject = new Person(height, 10, "in", "kg");
-            assertEquals(height*2.54f,builderObject.getHeight());
+            Person builderObject = new Person(BigDecimal.valueOf(height), BigDecimal.valueOf(10), "in", "kg");
+            assertTrue(BigDecimal.valueOf(height).multiply( BigDecimal.valueOf(2.54)).equals( builderObject.getHeight()));
         }
     }
 
@@ -25,8 +26,8 @@ public class PersonTest {
         Random random=new Random();
         int height= random.nextInt();
         for(int i=0;i<100;i++) {
-            Person builderObject = new Person(height, 10, "cm", "kg");
-            assertEquals(height,builderObject.getHeight());
+            Person builderObject = new Person(BigDecimal.valueOf(height), BigDecimal.valueOf(10), "cm", "kg");
+            assertTrue(BigDecimal.valueOf(height).equals( builderObject.getHeight()));
         }
     }
 
@@ -36,8 +37,8 @@ public class PersonTest {
         Random random=new Random();
         int weight= random.nextInt();
         for(int i=0;i<100;i++) {
-            Person builderObject = new Person(10, weight , "in", "kg");
-            assertEquals(weight,builderObject.getWeight());
+            Person builderObject = new Person(BigDecimal.valueOf(10), BigDecimal.valueOf(weight) , "in", "kg");
+            assertTrue(BigDecimal.valueOf(weight).equals( builderObject.getWeight()));
         }
     }
     @Test
@@ -46,8 +47,10 @@ public class PersonTest {
         Random random=new Random();
         int weight= random.nextInt();
         for(int i=0;i<100;i++) {
-            Person builderObject = new Person(10, weight , "in", "g");
-            assertEquals((float)weight/1000,builderObject.getWeight());
+            Person personObject = new Person(BigDecimal.valueOf(10), BigDecimal.valueOf(weight) , "in", "g");
+            assertTrue(BigDecimal.valueOf(weight).divide( BigDecimal.valueOf(1000)).equals( personObject.getWeight()));
         }
     }
+
 }
+

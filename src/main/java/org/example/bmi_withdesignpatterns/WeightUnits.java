@@ -1,6 +1,6 @@
 package org.example.bmi_withdesignpatterns;
 
 public enum WeightUnits {
-    cm,
+    g,
     kg
 }
