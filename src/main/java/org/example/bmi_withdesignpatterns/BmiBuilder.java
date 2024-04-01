@@ -1,5 +1,8 @@
 package org.example.bmi_withdesignpatterns;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class BmiBuilder {
 
     private final float height;
@@ -14,6 +17,10 @@ public class BmiBuilder {
 
 
     private final float convertWeightToKg(final float weight,final String weightUnits) {
+        Map<String,Float> map=new HashMap<>();
+        map.put("g",0.001f);
+        map.put("kg",1.0f);
+        /*
         switch (weightUnits)
         {
             case "g":
@@ -25,10 +32,17 @@ public class BmiBuilder {
                 //return(weight);
             }
         }
-        return (weight);
+         */
+        return (weight*map.get(weightUnits));
     }
 
     private final float convertHeightToCm(final float height, final String heightUnits) {
+
+        Map<String,Float> map=new HashMap<>();
+        map.put("in",2.54f);
+        map.put("cm",1.0f);
+
+        /*
         switch (heightUnits)
         {
             case "in":
@@ -40,7 +54,9 @@ public class BmiBuilder {
                 //return(height);
             }
         }
-        return (height);
+         */
+
+        return (height*map.get(heightUnits));
     }
 
     public final float getHeight() {
